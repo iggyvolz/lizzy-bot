@@ -1,0 +1,21 @@
+#!/bin/env php
+<?php
+
+use iggyvolz\Lizzy\LizzyBot;
+
+require_once __DIR__ . "/../vendor/autoload.php";
+if($argc < 2) {
+        if(file_exists("lizzy.json")) {
+            $argv0 = $argv[0];
+            $argv = json_decode(file_get_contents("lizzy.json"));
+            if(!is_array($argv)) $argv = [];
+            array_unshift($argv, $argv0);
+            $argc = count($argv);
+        }
+}
+if($argc < 2) die($argv[0] . " <token> [<guild>]\n");
+if($argc === 2) {
+    (new LizzyBot($argv[1]))->run();
+} else {
+    (new LizzyBot($argv[1], $argv[2], true))->run();
+}

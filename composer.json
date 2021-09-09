@@ -1,0 +1,23 @@
+{
+    "name": "iggyvolz/lizzy",
+    "description": "Bot for Engineering House",
+    "type": "project",
+    "require": {
+        "iggyvolz/lmdb": "^0.2.0",
+        "discord-php/slash": "dev-master",
+        "team-reflex/discord-php": "dev-master",
+        "php": "^8.0"
+    },
+    "license": "0BSD",
+    "autoload": {
+        "psr-4": {
+            "iggyvolz\\Lizzy\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Katie Volz",
+            "email": "iggyvolz@gmail.com"
+        }
+    ]
+}
